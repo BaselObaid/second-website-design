@@ -1,0 +1,622 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    perspective: 700px;
+    background-color: rgb(255, 250, 245);
+}
+
+/**************************header******************************/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 80%;
+    height: 20vh;
+    margin-left: 10%;
+    flex-wrap: wrap;
+}
+
+header .title {
+    color: black;
+    font-size: 35px;
+    margin-left: 10px;
+    text-decoration: underline;
+    margin-top: auto;
+    margin-bottom: auto;
+    z-index: 2;
+}
+
+header .title::first-letter {
+    color: red;
+}
+
+header .header-nav1 {
+    display: flex;
+    align-items: center;
+    width: 60%;
+}
+header .header-nav2{
+    z-index: 2;
+    color: rgb(68, 12, 12);
+}
+
+header .header-list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    font-size: 20px;
+    flex-wrap: wrap;
+}
+
+
+header .header-nav1 .header-list .product-item .product-table {
+    visibility: hidden;
+    position: absolute;
+    top: 80px;
+    width: 500px;
+    height: 50px;
+    border: solid 2px black;
+    text-align: center;
+    background-color:rgba(255, 250, 245,0.7) ;
+    z-index: 2;
+    transition: transform 1s;
+    transform: scale3d(1, 0, 0);
+}
+
+header .header-nav1 .header-list .product-item .product-table thead{
+    font-weight: bold;
+}
+header .header-nav1 .header-list .product-item .product-table thead th{
+    text-decoration: underline;
+}
+
+header .header-nav1 .header-list .product-item .product-table tbody{
+    color: rgb(68, 12, 12);
+}
+
+header .header-nav1 .header-list .product-item:hover .product-table {
+    visibility: visible;
+    transform: scale3d(1, 1, 1);
+}
+
+
+header nav .header-list li a {
+    color: black;
+    text-decoration: none;
+    margin-left: 30px;
+}
+
+header .header-nav1 .header-list li a {
+    position: relative;
+    padding: 10px 10px;
+    display: block;
+    font-weight: bold;
+}
+
+header .header-nav1 .header-list li a:before,
+header .header-nav1 .header-list li a:after {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    left: 0;
+    top: 0;
+    transition: transform 0.4s;
+    color: rgb(68, 12, 12);
+}
+
+header .header-nav1 .header-list li a:before {
+    border-width: 0px 3px;
+    height: 99%;
+    width: 96%;
+    transform: scale3d(1, 0, 0);
+}
+
+header .header-nav1 .header-list li a:hover:before {
+    transform: scale3d(1, 1, 1);
+}
+
+header .header-nav1 .header-list li a:after {
+    border-width: 3px 0px;
+    height: 90%;
+    width: 98%;
+    transform: scale3d(0, 1, 0);
+    transform-origin: left;
+}
+
+header .header-nav1 .header-list a:hover:after {
+    transform: scale3d(1, 1, 1);
+    transition-delay: 0.2s;
+}
+
+/*****************************main************************************/
+main .main-div {
+    position: relative;
+    width: 80%;
+    margin: 0 10%;
+    background-image: url(../image/Screenshot\ 2023-04-22\ 223250.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: bottom;
+    height: 80vh;
+}
+
+main .main-div h2{
+    position: absolute;
+    width: 200px;
+    font-size: 55px;
+    color: rgba(255, 255, 255,0.7);
+    top: 120px;
+    left: 200px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+}
+
+
+main .main-div .main-i {
+    width: 50px;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main .main-div .main-i a {
+    display: block;
+    color: black;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    opacity: 0;
+    transition: all 1s;
+}
+
+main .main-div .main-i a i {
+    margin-top: 12px;
+}
+
+main .main-div:hover .main-a1{
+    opacity: 1;
+}
+
+main .main-div:hover .main-button{
+    opacity: 1;
+}
+main .main-div .main-i .main-a1:hover+.main-a2 {
+    opacity: 1;
+}
+
+main .main-button {
+    position: absolute;
+    width: 130px;
+    height: 35px;
+    color: white;
+    border-radius: 20%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1.2px;
+    font-size: 15px;
+    border: none;
+    top: 50%;
+    left: 200px;
+    opacity: 0;
+    transition: all 1s;
+    letter-spacing: 2px;
+}
+
+/*******************************first section*********************************/
+
+section {
+    position: relative;
+    width: 80%;
+    height: 100%;
+    margin: 0px 10%;
+    padding-top: 40px;
+}
+
+section h2 {
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+    position: relative;
+}
+
+section .h2-line {
+    position: relative;
+    margin-top: 10px;
+    border-bottom: solid 3px rgb(102, 46, 32);
+    width: 5%;
+    margin-left: 47.5%;
+    transition: transform 1.5s;
+}
+
+section h2:hover+.h2-line {
+    transform: scale(3, 1);
+}
+
+section .section-main-div {
+    position: relative;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    text-align: center;
+    transform-style: preserve-3d;
+}
+
+.first-section .section-main-div .div-item1 {
+    position: relative;
+    height: 300px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.first-section .section-main-div .div-item1 .item1-img {
+    position: relative;
+    background-image: url(../image/header.png);
+    width: 100%;
+    height: 75%;
+    margin-bottom: 10px;
+
+}
+
+.first-section .section-main-div .div-item1 span {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 14px;
+    display: block;
+}
+
+.first-section .section-main-div .div-item1 h3 {
+    display: inline-block;
+}
+
+.first-section .section-main-div .div-item1 .div-goto {
+    position: relative;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-width: 15px;
+    border-style: solid;
+    border-color: rgb(255, 250, 245) rgb(255, 250, 245) rgb(255, 250, 245) rgb(68, 12, 12);
+    right: 0;
+    bottom: -10px;
+    visibility: hidden;
+    transition: all 1s;
+}
+
+.first-section .section-main-div .div-item1:hover .div-goto {
+    visibility: visible;
+    transform: rotate(-90deg);
+}
+
+.first-section .section-main-div .div-article {
+    position: relative;
+    height: 300px;
+    width: 48%;
+    background-color: rgb(247, 225, 207);
+    text-align: left;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.first-section .section-main-div .div-article .sq1{
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(68, 12, 12);
+    border-radius: 50%;
+}
+.first-section .section-main-div .div-article .sq2{
+    position: absolute;
+    left: 25px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(68, 12, 12,0.5);
+    border-radius: 50%;
+}
+
+.first-section .section-main-div .div-article .sq3{
+    position: absolute;
+    left: 40px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(68, 12, 12,0.2);
+    border-radius: 50%;
+}
+.first-section .section-main-div .div-article h3 {
+    font-size: 30px;
+}
+
+.first-section .section-main-div .div-article span {
+    color: rgb(68, 12, 12);
+    font-size: 20px;
+}
+
+.first-section .section-main-div .div-article p {
+    font-size: 20px;
+
+}
+
+.first-section .section-main-div .div-article .line {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 0px;
+    border: solid 2px rgb(102, 46, 32);
+    margin-left: 80px;
+}
+
+.first-section .section-main-div .div-item2 {
+    position: relative;
+    height: 300px;
+    width: 20%;
+    padding: 20px;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    word-wrap: break-word;
+}
+
+.first-section .section-main-div .div-item2:hover {
+    transform: scale3d(1.2, 1.2, 2);
+}
+
+.first-section .section-main-div .div-item2 span {
+    color: black;
+}
+
+.first-section .section-main-div .div-item2 h3 {
+    font-size: 25px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.first-section .section-main-div .first-item2 {
+    background-image: url(../image/PH191931.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: black;
+}
+
+.first-section .section-main-div .second-item2 {
+    background-image: url(../image/Screenshot\ 2023-04-22\ 223922.png);
+}
+
+
+.first-section-icons {
+    display: flex;
+    margin-bottom: 30px;
+    margin-top: 55px;
+    justify-content: space-evenly;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.icon-items {
+    height: 120px;
+    border-right: solid 2px rgb(102, 46, 32);
+    border-left: solid 2px rgb(102, 46, 32);
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.icon-items .icon {
+    position: relative;
+    background-image: url(../image/IMG-20230501-WA0003.jpg);
+    width: 50%;
+    height: 50%;
+    background-repeat: no-repeat;
+    margin-left: 75px;
+    transition: all 1s;
+    margin-bottom: 0;
+}
+
+.icon-items .icon-1:hover {
+    background-position-y: -90px;
+}
+
+.icon-items .icon-2 {
+    background-position-y: -184px;
+}
+
+.icon-items .icon-2:hover {
+    background-position-y: -275px;
+}
+
+.icon-items .icon-3 {
+    background-position-y: -368px;
+}
+
+.icon-items .icon-3:hover {
+    background-position-y: -460px;
+}
+
+.icon-items .icon-4 {
+    background-position-y: -552px;
+}
+
+.icon-items .icon-4:hover {
+    background-position-y: -647px;
+}
+
+.icon-items .icon-5 {
+    background-position-y: -740px;
+}
+
+.icon-items .icon-5:hover {
+    background-position-y: -830px;
+}
+
+.icon-items .icon-info span {
+    font-size: 15px;
+    color: rgba(102, 46, 32, 0.7);
+}
+
+hr{
+    width: 80%;
+    margin-left: 10%;
+    color: rgba(102, 46, 32, 0.7);
+}
+
+/***********************second section**************************/
+
+.second-section .features{
+    display: flex;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    width: 50%;
+    height: 40px;
+    margin-left: 25%;
+    justify-content: space-evenly;
+    color: rgb(68, 12, 12);
+    font-weight: bold;
+}
+
+.second-section .section-main-div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items:flex-start;
+    padding: 50px;
+}
+
+.second-section .section-main-div .section-items{
+    position: relative;
+    width: 30%;
+    height: 400px;
+    margin-bottom: 10px;
+    perspective: 700px;
+    background-color: rgb(252, 252, 252);
+    text-align: left;
+}
+
+.second-section .section-main-div .section-items .product-container{
+    position: relative;
+    width: 100%;
+    height: 80%;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    transition-delay: 0.5s;
+    margin-bottom: 10px;
+}
+
+.second-section .section-main-div .section-items .product-container .face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center ;
+    border-radius: 3%;
+}
+
+.second-section .section-main-div .items-1:hover .container-1 {
+    transform: rotateY(180deg);
+}
+.second-section .section-main-div .items-2:hover .container-2 {
+    transform: rotateY(180deg);
+}
+.second-section .section-main-div .items-3:hover .container-3 {
+    transform: rotateY(180deg);
+}
+.second-section .section-main-div .items-4:hover .container-4 {
+    transform: rotateY(180deg);
+}
+.second-section .section-main-div .items-5:hover .container-5 {
+    transform: rotateY(180deg);
+}
+.second-section .section-main-div .items-6:hover .container-6 {
+    transform: rotateY(180deg);
+}
+
+
+.second-section .section-main-div .section-items .product-container .img1{
+    background-image: url(../image/Screenshot\ 2023-04-22\ 222628.png);
+    transform: rotateY(180deg);
+}
+.second-section .section-main-div .section-items .product-container .img2{
+    background-image: url(../image/Screenshot\ 2023-04-22\ 222609.png);
+
+}
+.second-section .section-main-div .section-items .product-container .img3{
+    background-image: url(../image/Screenshot\ 2023-04-22\ 222735.png);
+    transform: rotateY(180deg);
+}
+.second-section .section-main-div .section-items .product-container .img4{
+    background-image: url(../image/Screenshot\ 2023-04-22\ 222714.png);
+}
+.second-section .section-main-div .section-items .product-container .img5{
+    background-image: url(../image/Screenshot\ 2023-04-22\ 222854.png);
+    transform: rotateY(180deg);
+}
+.second-section .section-main-div .section-items .product-container .img6{
+    background-image: url(../image/Screenshot\ 2023-04-22\ 222841.png);
+}
+.second-section .section-main-div .section-items .product-container .img7{
+    background-image: url(../image/Screenshot\ 2023-04-22\ 223117.png);
+    transform: rotateY(180deg);
+}
+.second-section .section-main-div .section-items .product-container .img8{
+    background-image: url(../image/Screenshot\ 2023-04-22\ 223103.png);
+}
+.second-section .section-main-div .section-items .product-container .img9{
+    background-image: url(../image/Screenshot\ 2023-04-22\ 223905.png);
+    transform: rotateY(180deg);
+}
+.second-section .section-main-div .section-items .product-container .img10{
+    background-image: url(../image/Screenshot\ 2023-04-22\ 223922.png);
+}
+.second-section .section-main-div .section-items .product-container .img11{
+    background-image: url(../image/Screenshot\ 2023-04-22\ 223750.png);
+    transform: rotateY(180deg);
+}
+.second-section .section-main-div .section-items .product-container .img12{
+    background-image: url(../image/Screenshot\ 2023-04-22\ 223812.png);
+}
+
+.second-section .section-main-div .section-items .list{
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.second-section .section-main-div .section-items .list li{
+    margin: 5px;
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(68, 12, 12);
+    color: white;
+    padding: 10px;
+    border-radius: 10%;
+}
+.second-section .section-main-div .section-items .list li i{
+    font-size: 25px;
+}
+
+/****************************footer*******************************/
+footer{
+    background-color: antiquewhite;
+    padding: 50px 0;
+    text-align: center;
+}
