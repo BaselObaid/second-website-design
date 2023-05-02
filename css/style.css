@@ -194,7 +194,7 @@ main .main-div:hover .main-a1{
 main .main-div:hover .main-button{
     opacity: 1;
 }
-main .main-div .main-i .main-a1:hover+.main-a2 {
+main .main-div .main-i:hover .main-a2 {
     opacity: 1;
 }
 
